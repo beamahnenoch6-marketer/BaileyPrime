@@ -1,10 +1,11 @@
 import Navigation from "@/components/landing/Navigation";
 import Hero from "@/components/landing/Hero";
-import FeaturedApartments from "@/components/landing/FeaturedApartments";
 import About from "@/components/landing/About";
-import HowItWorks from "@/components/landing/HowItWorks";
-import WhyTrustUs from "@/components/landing/WhyTrustUs";
+import FeaturedApartments from "@/components/landing/FeaturedApartments";
 import Contact from "@/components/landing/Contact";
+import FeaturedGallery from "@/components/landing/FeaturedGallery";
+import Amenities from "@/components/landing/Amenities";
+import Discover from "@/components/landing/Discover";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => {
@@ -14,11 +15,12 @@ const Index = () => {
       <div id="hero">
         <Hero />
       </div>
-      <FeaturedApartments />
       <About />
-      <HowItWorks />
-      <WhyTrustUs />
+      <FeaturedApartments />
       <Contact />
+      <FeaturedGallery />
+      <Amenities />
+      <Discover />
       <Footer />
     </div>
   );

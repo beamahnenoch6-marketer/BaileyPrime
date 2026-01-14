@@ -1,37 +1,83 @@
-import { Award } from "lucide-react";
-
 const Footer = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <footer className="bg-primary border-t border-white/10 py-12 px-6">
+    <footer className="bg-primary py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo & Partner Badge */}
-          <div className="text-center md:text-left">
-            <h3 className="font-heading text-2xl text-white mb-2">
-              BaileyPrimeStay
-            </h3>
-            <div className="flex items-center gap-2 text-gold text-sm">
-              <Award className="w-4 h-4" />
-              <span>Official Partner of Douglas Luxury Apartments</span>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          {/* Logo */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                <span className="text-primary font-bold text-lg">B</span>
+              </div>
             </div>
+            <p className="text-white/50 text-xs">
+              © {new Date().getFullYear()} BaileyPrimeStay, Inc.
+              <br />
+              All rights reserved.
+            </p>
           </div>
 
-          {/* Locations */}
-          <div className="text-center md:text-right">
-            <p className="text-white/60 text-sm mb-1">
-              Serving East Legon, Shiashie, Adenta & surrounding areas.
-            </p>
-            <p className="text-white/40 text-sm">
-              All listings and bookings are exclusively within the Douglas Luxury Apartments portfolio.
-            </p>
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-gold text-sm font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              {["Home", "About", "Apartments", "Contact"].map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={() => scrollToSection(item.toLowerCase())}
+                    className="text-white/70 hover:text-gold text-sm transition-colors"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Our Services */}
+          <div>
+            <h4 className="text-gold text-sm font-semibold mb-4">Our Services</h4>
+            <ul className="space-y-2">
+              {["Short-stays", "Long-stays", "Policies", "FAQs"].map((item) => (
+                <li key={item}>
+                  <span className="text-white/70 text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Connect with Us */}
+          <div>
+            <h4 className="text-gold text-sm font-semibold mb-4">Connect with Us</h4>
+            <ul className="space-y-2">
+              {["Facebook", "Instagram", "Twitter", "LinkedIn"].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    className="text-white/70 hover:text-gold text-sm transition-colors"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-10 pt-6 border-t border-white/10 text-center">
-          <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} BaileyPrimeStay. All rights reserved.
-          </p>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-white/50 text-xs text-center md:text-left">
+              Official Partner of Douglas Luxury Apartments • Serving East Legon, Shiashie, Adenta & surrounding areas
+            </p>
+          </div>
         </div>
       </div>
     </footer>
