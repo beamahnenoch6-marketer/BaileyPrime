@@ -1,11 +1,58 @@
+import { useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import apartment1 from "@/assets/apartment-1.jpg";
 import apartment2 from "@/assets/apartment-2.jpg";
 import apartment3 from "@/assets/apartment-3.jpg";
 import heroImage from "@/assets/hero-apartment.jpg";
 
-const images = [apartment1, apartment2, heroImage, apartment3];
+const images = [
+  { id: 1, src: apartment1, alt: "Featured apartment 1" },
+  { id: 2, src: apartment2, alt: "Featured apartment 2" },
+  { id: 3, src: heroImage, alt: "Featured apartment 3" },
+  { id: 4, src: apartment3, alt: "Featured apartment 4" },
+];
+
+// Duplicate images for seamless infinite loop
+const duplicatedImages = [...images, ...images, ...images];
 
 const FeaturedGallery = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    skipSnaps: false,
+    dragFree: true,
+  });
+
+  // Smooth continuous scroll effect
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    let animationId: number;
+    const speed = 0.5; // Pixels per frame
+
+    const animate = () => {
+      if (!emblaApi) return;
+      
+      const engine = emblaApi.internalEngine();
+      const location = engine.location.get();
+      engine.location.set(location - speed);
+      engine.target.set(engine.location.get());
+      engine.scrollLooper.loop(-1);
+      engine.slideLooper.loop();
+      engine.translate.to(engine.location.get());
+      
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
+  }, [emblaApi]);
+
   return (
     <section className="py-20 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
@@ -19,20 +66,24 @@ const FeaturedGallery = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {images.map((image, idx) => (
-            <div
-              key={idx}
-              className="aspect-[4/3] overflow-hidden cursor-pointer border-2 border-transparent"
-            >
-              <img
-                src={image}
-                alt={`Featured apartment ${idx + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+        {/* Gallery Carousel */}
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex">
+            {duplicatedImages.map((image, index) => (
+              <div
+                key={`${image.id}-${index}`}
+                className="flex-none w-1/2 md:w-1/4 px-2 cursor-pointer"
+              >
+                <div className="aspect-[4/3] overflow-hidden border-2 border-transparent">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
