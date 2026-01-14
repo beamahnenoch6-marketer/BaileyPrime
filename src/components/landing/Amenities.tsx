@@ -57,7 +57,7 @@ const Amenities = () => {
           {amenities.map((item) => (
             <div
               key={item.id}
-              className="bg-cream rounded-xl p-4 text-center"
+              className="bg-cream p-4 text-center"
             >
               <div className="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden border-2 border-gold">
                 <img
@@ -71,7 +71,7 @@ const Amenities = () => {
               {item.highlight ? (
                 <Button 
                   size="sm"
-                  className="bg-gold hover:bg-gold-light text-primary text-xs font-semibold rounded-full px-4"
+                  className="bg-gold hover:bg-gold-light text-primary text-xs font-semibold rounded-none px-4"
                 >
                   {item.phone}
                 </Button>
@@ -79,7 +79,7 @@ const Amenities = () => {
                 <Button 
                   size="sm"
                   variant="outline"
-                  className="border-gold text-primary hover:bg-gold/10 text-xs rounded-full px-4"
+                  className="border-gold text-primary hover:bg-gold/10 text-xs rounded-none px-4"
                 >
                   {item.id === 1 ? "Learn More" : item.id === 2 ? "Explore Now" : "Partner with us"}
                 </Button>
@@ -92,7 +92,7 @@ const Amenities = () => {
         <div className="text-center mt-10">
           <Button 
             onClick={() => scrollToSection("booking")}
-            className="bg-primary border border-white/20 hover:bg-navy-light text-white font-semibold px-8 py-3 rounded-full"
+            className="bg-primary border border-white/20 hover:bg-navy-light text-white font-semibold px-8 py-3 rounded-none"
           >
             Book Your Stay
           </Button>

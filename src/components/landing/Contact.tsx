@@ -23,7 +23,7 @@ const Contact = () => {
             </p>
             <Button 
               onClick={() => scrollToSection("booking")}
-              className="bg-gold hover:bg-gold-light text-primary font-semibold px-8 py-3 rounded-full"
+              className="bg-gold hover:bg-gold-light text-primary font-semibold px-8 py-3 rounded-none"
             >
               Inquire Now
             </Button>
@@ -31,7 +31,7 @@ const Contact = () => {
 
           {/* Image */}
           <div className="relative">
-            <div className="rounded-xl overflow-hidden shadow-elegant">
+            <div className="overflow-hidden shadow-elegant">
               <img
                 src={apartment1}
                 alt="Luxury apartment interior"

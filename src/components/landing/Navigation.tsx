@@ -61,7 +61,7 @@ const Navigation = () => {
           ))}
           <button
             onClick={() => scrollToSection("contact")}
-            className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 py-2.5 rounded-full text-sm transition-all duration-300"
+            className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 py-2.5 text-sm"
           >
             Book Now
           </button>
@@ -91,7 +91,7 @@ const Navigation = () => {
             ))}
             <button
               onClick={() => scrollToSection("contact")}
-              className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 py-2.5 rounded-full text-sm transition-all duration-300 mt-2"
+              className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 py-2.5 text-sm mt-2"
             >
               Book Now
             </button>

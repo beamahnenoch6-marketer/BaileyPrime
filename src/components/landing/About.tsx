@@ -40,13 +40,13 @@ const About = () => {
           {apartments.map((apt) => (
             <div
               key={apt.id}
-              className="group relative rounded-xl overflow-hidden border-2 border-primary/20 hover:border-gold transition-all duration-300"
+              className="group relative overflow-hidden border-2 border-primary/20"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={apt.image}
                   alt={apt.description}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
               </div>
               {/* Overlay with text */}
@@ -54,7 +54,7 @@ const About = () => {
                 <p className="text-white text-sm mb-4">{apt.description}</p>
                 <Button 
                   size="sm"
-                  className="bg-gold hover:bg-gold-light text-primary font-semibold rounded-full px-6"
+                  className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 rounded-none"
                 >
                   Check Availability
                 </Button>

@@ -24,12 +24,12 @@ const FeaturedGallery = () => {
           {images.map((image, idx) => (
             <div
               key={idx}
-              className="aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer border-2 border-transparent hover:border-gold transition-all duration-300"
+              className="aspect-[4/3] overflow-hidden cursor-pointer border-2 border-transparent"
             >
               <img
                 src={image}
                 alt={`Featured apartment ${idx + 1}`}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover"
               />
             </div>
           ))}
