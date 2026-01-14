@@ -25,7 +25,7 @@ const Discover = () => {
             </p>
             <Button 
               onClick={() => scrollToSection("apartments")}
-              className="bg-gold hover:bg-gold-light text-primary font-semibold px-8 py-3 rounded-full"
+              className="bg-gold hover:bg-gold-light text-primary font-semibold px-8 py-3 rounded-none"
             >
               Explore Apartments
             </Button>
@@ -33,7 +33,7 @@ const Discover = () => {
 
           {/* Image */}
           <div className="relative">
-            <div className="rounded-xl overflow-hidden">
+            <div className="overflow-hidden">
               <img
                 src={apartment2}
                 alt="Luxury apartment bedroom"
@@ -43,7 +43,7 @@ const Discover = () => {
             <div className="absolute -bottom-4 -right-4 md:bottom-4 md:right-4">
               <Button 
                 onClick={() => scrollToSection("contact")}
-                className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 py-2.5 rounded-full shadow-lg"
+                className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 py-2.5 rounded-none shadow-lg"
               >
                 Book Now
               </Button>

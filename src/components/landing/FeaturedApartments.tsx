@@ -49,13 +49,13 @@ const FeaturedApartments = () => {
           {apartments.map((apt) => (
             <div
               key={apt.id}
-              className="group cursor-pointer"
+              className="cursor-pointer"
             >
-              <div className="aspect-[3/4] rounded-lg overflow-hidden border-2 border-transparent hover:border-gold transition-all duration-300">
+              <div className="aspect-[3/4] overflow-hidden border-2 border-transparent">
                 <img
                   src={apt.image}
                   alt={apt.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="mt-3">

@@ -35,7 +35,7 @@ const Hero = () => {
         <Button 
           onClick={() => scrollToSection("contact")}
           size="lg" 
-          className="bg-gold hover:bg-gold-light text-primary font-semibold px-10 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105"
+          className="bg-gold hover:bg-gold-light text-primary font-semibold px-10 py-6 text-lg rounded-none"
         >
           Book Now
         </Button>
