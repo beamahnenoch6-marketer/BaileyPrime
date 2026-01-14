@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import apartment1 from "@/assets/apartment-1.jpg";
 import apartment2 from "@/assets/apartment-2.jpg";
 import apartment3 from "@/assets/apartment-3.jpg";
@@ -30,7 +32,47 @@ const apartments = [
   },
 ];
 
+// Duplicate apartments for seamless infinite loop
+const duplicatedApartments = [...apartments, ...apartments, ...apartments];
+
 const FeaturedApartments = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    skipSnaps: false,
+    dragFree: true,
+  });
+
+  // Smooth continuous scroll effect
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    let animationId: number;
+    const speed = 0.5; // Pixels per frame
+
+    const animate = () => {
+      if (!emblaApi) return;
+      
+      const engine = emblaApi.internalEngine();
+      const location = engine.location.get();
+      engine.location.set(location - speed);
+      engine.target.set(engine.location.get());
+      engine.scrollLooper.loop(-1);
+      engine.slideLooper.loop();
+      engine.translate.to(engine.location.get());
+      
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
+  }, [emblaApi]);
+
   return (
     <section id="apartments" className="py-20 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
@@ -44,26 +86,28 @@ const FeaturedApartments = () => {
           </p>
         </div>
 
-        {/* Apartment Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {apartments.map((apt) => (
-            <div
-              key={apt.id}
-              className="cursor-pointer"
-            >
-              <div className="aspect-[3/4] overflow-hidden border-2 border-transparent">
-                <img
-                  src={apt.image}
-                  alt={apt.title}
-                  className="w-full h-full object-cover"
-                />
+        {/* Apartment Carousel */}
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex">
+            {duplicatedApartments.map((apt, index) => (
+              <div
+                key={`${apt.id}-${index}`}
+                className="flex-none w-1/2 md:w-1/4 px-2 cursor-pointer"
+              >
+                <div className="aspect-[3/4] overflow-hidden border-2 border-transparent">
+                  <img
+                    src={apt.image}
+                    alt={apt.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mt-3">
+                  <h3 className="font-semibold text-primary text-sm">{apt.title}</h3>
+                  <p className="text-muted-foreground text-xs">{apt.location}</p>
+                </div>
               </div>
-              <div className="mt-3">
-                <h3 className="font-semibold text-primary text-sm">{apt.title}</h3>
-                <p className="text-muted-foreground text-xs">{apt.location}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
