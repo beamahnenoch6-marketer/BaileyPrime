@@ -1,4 +1,5 @@
 import heroImage from "@/assets/hero-apartment.jpg";
+import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -22,9 +23,7 @@ const Hero = () => {
       
       {/* Logo */}
       <div className="absolute top-6 left-6 z-20">
-        <span className="text-white font-heading text-xl md:text-2xl tracking-wide">
-          BaileyPrimeStay
-        </span>
+        <img src={logo} alt="BaileyPrimeStay" className="h-10 md:h-14 w-auto" />
       </div>
       
       {/* Content */}
