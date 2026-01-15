@@ -32,7 +32,7 @@ const apartments = [
 
 const FeaturedApartments = () => {
   return (
-    <section id="apartments" className="py-20 px-6 bg-background">
+    <section id="apartments" className="pt-10 pb-20 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-14">
