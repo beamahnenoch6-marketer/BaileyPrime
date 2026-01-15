@@ -1,4 +1,3 @@
-import Navigation from "@/components/landing/Navigation";
 import Hero from "@/components/landing/Hero";
 import About from "@/components/landing/About";
 import FeaturedApartments from "@/components/landing/FeaturedApartments";
@@ -11,7 +10,6 @@ import Footer from "@/components/landing/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
       <div id="hero">
         <Hero />
       </div>
