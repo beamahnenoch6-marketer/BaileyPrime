@@ -29,7 +29,7 @@ const FeaturedGallery = () => {
     if (!emblaApi) return;
 
     let animationId: number;
-    const speed = 0.5; // Pixels per frame
+    const speed = 0.2; // Pixels per frame
 
     const animate = () => {
       if (!emblaApi) return;
