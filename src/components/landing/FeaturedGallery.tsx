@@ -19,8 +19,9 @@ const FeaturedGallery = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
-    skipSnaps: false,
+    skipSnaps: true,
     dragFree: true,
+    containScroll: false,
   });
 
   // Smooth continuous scroll effect

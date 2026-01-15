@@ -10,15 +10,22 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+    <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center">
+      {/* Fixed Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-primary/50" />
+      <div className="fixed inset-0 bg-primary/50 -z-10" />
+      
+      {/* Logo */}
+      <div className="absolute top-6 left-6 z-20">
+        <span className="text-white font-heading text-xl md:text-2xl tracking-wide">
+          BaileyPrimeStay
+        </span>
+      </div>
       
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
@@ -27,7 +34,7 @@ const Hero = () => {
           <br />
           <span className="text-gold">Accra's Best</span>
         </h1>
-        <p className="text-lg md:text-xl text-white/90 font-light max-w-2xl mx-auto mb-8">
+        <p className="text-sm md:text-base text-white/90 font-light max-w-2xl mx-auto mb-8">
           Explore a curated selection of short-stay apartments managed by BaileyPrimeStay within the Douglas Luxury Apartments portfolio.
         </p>
         
