@@ -23,7 +23,7 @@ const Hero = () => {
       
       {/* Logo */}
       <div className="absolute top-6 left-6 z-20">
-        <img src={logo} alt="BaileyPrimeStay" className="h-10 md:h-14 w-auto" />
+        <img src={logo} alt="BaileyPrimeStay" className="h-10 md:h-14 w-auto rounded-full" />
       </div>
       
       {/* Content */}
