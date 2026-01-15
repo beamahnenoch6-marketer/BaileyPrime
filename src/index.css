@@ -20,16 +20,16 @@
     --primary: 220 50% 20%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary: Gold */
-    --secondary: 43 74% 49%;
+    /* Secondary: Gold (lighter) */
+    --secondary: 43 74% 58%;
     --secondary-foreground: 220 50% 15%;
     
     /* Muted: Light Gray */
     --muted: 220 20% 96%;
     --muted-foreground: 220 30% 40%;
     
-    /* Accent: Gold */
-    --accent: 43 74% 49%;
+    /* Accent: Gold (lighter) */
+    --accent: 43 74% 58%;
     --accent-foreground: 220 50% 15%;
     
     --destructive: 0 84.2% 60.2%;
@@ -37,20 +37,20 @@
     
     --border: 220 20% 88%;
     --input: 220 20% 95%;
-    --ring: 43 74% 49%;
+    --ring: 43 74% 58%;
 
     --radius: 0.75rem;
 
     /* Custom Colors */
     --navy: 220 50% 20%;
     --navy-light: 220 40% 30%;
-    --gold: 43 74% 49%;
-    --gold-light: 43 74% 60%;
+    --gold: 43 74% 58%;
+    --gold-light: 43 74% 68%;
     --cream: 35 30% 95%;
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 50% 15% / 0.85), hsl(220 50% 20% / 0.7));
-    --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%), hsl(43 74% 60%));
+    --gradient-gold: linear-gradient(135deg, hsl(43 74% 58%), hsl(43 74% 68%));
     
     /* Shadows */
     --shadow-elegant: 0 10px 40px -10px hsl(220 50% 20% / 0.2);
