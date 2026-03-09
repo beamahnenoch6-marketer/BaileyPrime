@@ -1,15 +1,23 @@
 import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import apartment1 from "@/assets/apartment-1.jpg";
-import apartment2 from "@/assets/apartment-2.jpg";
-import apartment3 from "@/assets/apartment-3.jpg";
-import heroImage from "@/assets/hero-apartment.jpg";
+import apartment4 from "@/assets/apartment-4.jpg";
+import apartment5 from "@/assets/apartment-5.jpg";
+import apartment6 from "@/assets/apartment-6.jpg";
+import apartment7 from "@/assets/apartment-7.jpg";
+import balcony from "@/assets/amenity-balcony.jpg";
+import gym from "@/assets/amenity-gym.jpg";
+import pool from "@/assets/amenity-pool.jpg";
+import parking from "@/assets/amenity-parking.jpg";
 
 const images = [
-  { id: 1, src: apartment1, alt: "Featured apartment 1" },
-  { id: 2, src: apartment2, alt: "Featured apartment 2" },
-  { id: 3, src: heroImage, alt: "Featured apartment 3" },
-  { id: 4, src: apartment3, alt: "Featured apartment 4" },
+  { id: 1, src: apartment4, alt: "Modern kitchen & living area" },
+  { id: 2, src: apartment5, alt: "Executive bedroom suite" },
+  { id: 3, src: apartment6, alt: "Premium dining & lounge" },
+  { id: 4, src: apartment7, alt: "Classic living space" },
+  { id: 5, src: balcony, alt: "Rooftop balcony with city views" },
+  { id: 6, src: gym, alt: "Fully equipped gym" },
+  { id: 7, src: pool, alt: "Swimming pool" },
+  { id: 8, src: parking, alt: "Secure car park" },
 ];
 
 // Duplicate images for seamless infinite loop
@@ -29,7 +37,7 @@ const FeaturedGallery = () => {
     if (!emblaApi) return;
 
     let animationId: number;
-    const speed = 0.2; // Pixels per frame
+    const speed = 0.2;
 
     const animate = () => {
       if (!emblaApi) return;
