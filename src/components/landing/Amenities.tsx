@@ -1,101 +1,39 @@
-import apartment1 from "@/assets/apartment-1.jpg";
-import apartment2 from "@/assets/apartment-2.jpg";
-import { Button } from "@/components/ui/button";
+import { Wifi, Dumbbell, Sun, Waves, Car } from "lucide-react";
 
 const amenities = [
-  {
-    id: 1,
-    image: apartment1,
-    title: "Bedroom",
-    description: "Relax in style",
-  },
-  {
-    id: 2,
-    image: apartment2,
-    title: "Bathroom",
-    description: "Experience the ultimate in comfort and care",
-  },
-  {
-    id: 3,
-    image: apartment1,
-    title: "Douglas & Stayy Juey",
-    description: "Coalition Rental in local Legomen Gorly Artliners Succeedals",
-    highlight: true,
-    phone: "0503650656",
-  },
-  {
-    id: 4,
-    image: apartment2,
-    title: "Our Trusted Partners",
-    description: "Discover our trusted partner Douglas Luxury Apartments",
-  },
+  { icon: Wifi, title: "Wi-Fi", description: "High-speed internet throughout your stay" },
+  { icon: Dumbbell, title: "Gym", description: "Fully equipped fitness center" },
+  { icon: Sun, title: "Balcony", description: "Private balcony with stunning views" },
+  { icon: Waves, title: "Swimming Pool", description: "Refreshing pool for relaxation" },
+  { icon: Car, title: "Car Park", description: "Secure on-site parking available" },
 ];
 
 const Amenities = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section className="py-16 px-6 bg-primary">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="font-heading text-2xl md:text-3xl text-gold mb-3">
             Amenities and Features
           </h2>
           <p className="text-white/70 text-sm max-w-xl mx-auto">
-            Enjoy a range of thoughtful amenities and luxurious features in our apartments, including high-quality furnishings
+            Enjoy a range of thoughtful amenities and luxurious features in our apartments
           </p>
         </div>
 
-        {/* Amenities Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {amenities.map((item) => (
             <div
-              key={item.id}
-              className="bg-cream p-4 text-center"
+              key={item.title}
+              className="bg-white/10 backdrop-blur-sm border border-white/10 p-6 text-center rounded-sm hover:bg-white/15 transition-colors"
             >
-              <div className="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden border-2 border-gold">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gold/20 flex items-center justify-center">
+                <item.icon className="w-6 h-6 text-gold" />
               </div>
-              <h3 className="font-semibold text-primary text-sm mb-1">{item.title}</h3>
-              <p className="text-muted-foreground text-xs mb-3">{item.description}</p>
-              {item.highlight ? (
-                <Button 
-                  size="sm"
-                  className="bg-gold hover:bg-gold-light text-primary text-xs font-semibold rounded-none px-4"
-                >
-                  {item.phone}
-                </Button>
-              ) : (
-                <Button 
-                  size="sm"
-                  variant="outline"
-                  className="border-gold text-primary hover:bg-gold/10 text-xs rounded-none px-4"
-                >
-                  {item.id === 1 ? "Learn More" : item.id === 2 ? "Explore Now" : "Partner with us"}
-                </Button>
-              )}
+              <h3 className="font-semibold text-white text-sm mb-1">{item.title}</h3>
+              <p className="text-white/60 text-xs">{item.description}</p>
             </div>
           ))}
-        </div>
-
-        {/* Book Your Stay Button */}
-        <div className="text-center mt-10">
-          <Button 
-            onClick={() => scrollToSection("booking")}
-            className="bg-primary border border-white/20 hover:bg-navy-light text-white font-semibold px-8 py-3 rounded-none"
-          >
-            Book Your Stay
-          </Button>
         </div>
       </div>
     </section>
