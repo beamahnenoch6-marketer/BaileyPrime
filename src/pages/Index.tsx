@@ -1,5 +1,6 @@
 import Hero from "@/components/landing/Hero";
 import About from "@/components/landing/About";
+import Services from "@/components/landing/Services";
 import FeaturedApartments from "@/components/landing/FeaturedApartments";
 import Contact from "@/components/landing/Contact";
 import FeaturedGallery from "@/components/landing/FeaturedGallery";
@@ -14,6 +15,7 @@ const Index = () => {
         <Hero />
       </div>
       <About />
+      <Services />
       <FeaturedApartments />
       <Contact />
       <FeaturedGallery />
