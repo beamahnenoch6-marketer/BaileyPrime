@@ -34,7 +34,7 @@ const Hero = () => {
           <span className="text-gold">Accra's Best</span>
         </h1>
         <p className="text-sm md:text-base text-white/90 font-light max-w-2xl mx-auto mb-8">
-          Explore a curated selection of short-stay apartments managed by BaileyPrimeStay within the Douglas Luxury Apartments portfolio.
+          Explore a curated selection of short-stay apartments managed by BaileyPrimeStay in partnership with award-winning luxury residences in Accra, Ghana.
         </p>
         
         {/* CTA Button */}
