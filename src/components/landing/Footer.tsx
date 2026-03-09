@@ -26,8 +26,11 @@ const Footer = () => {
                 <span className="text-primary font-bold text-lg">B</span>
               </div>
             </div>
-            <p className="text-white/50 text-xs mb-2">
+            <p className="text-white/50 text-xs mb-1">
               📧 baileyprimestay@gmail.com
+            </p>
+            <p className="text-white/50 text-xs mb-2">
+              📞 <a href="tel:0503650656" className="hover:text-gold transition-colors">0503650656</a>
             </p>
             <p className="text-white/50 text-xs">
               © {new Date().getFullYear()} BaileyPrimeStay, Inc.
