@@ -18,10 +18,10 @@ const Discover = () => {
             <h2 className="font-heading text-3xl md:text-4xl text-gold mb-6">
               Discover the Best
               <br />
-              of Accra
+              of BaileyPrimeStay
             </h2>
             <p className="text-white/70 text-sm leading-relaxed mb-8">
-              Welcome to Douglas Luxury Apartments, where we offer a curated selection of high-end, short-stay apartments in prime locations throughout Accra. Enjoy the comfort and convenience of a home away from home, with all the amenities and services you expect from a luxury accommodation provider.
+              Welcome to BaileyPrimeStay, where we offer a curated selection of clean, private, and premium short-stay apartments in prime locations throughout Accra. Enjoy the comfort and convenience of a home away from home, with quality service, professionalism, and a memorable stay every time.
             </p>
             <Button 
               onClick={() => scrollToSection("apartments")}
