@@ -1,4 +1,3 @@
-import apartment1 from "@/assets/apartment-1.jpg";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
@@ -29,12 +28,15 @@ const Contact = () => {
             </Button>
           </div>
 
-          {/* Image */}
+          {/* Video */}
           <div className="relative">
             <div className="overflow-hidden shadow-elegant">
-              <img
-                src={apartment1}
-                alt="Luxury apartment interior"
+              <video
+                src="/videos/apartment-tour.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="w-full h-[400px] object-cover"
               />
             </div>
