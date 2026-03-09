@@ -46,7 +46,7 @@ const Hero = () => {
             Book Now
           </Button>
         </a>
-        <p className="text-white/80 text-sm mt-4">
+        <p className="text-white text-2xl md:text-4xl font-heading mt-6">
           📞 <a href="tel:0503650656" className="hover:text-gold transition-colors">0503650656</a>
         </p>
       </div>
