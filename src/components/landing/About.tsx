@@ -21,6 +21,19 @@ const About = () => {
             At Bailey PrimeStay, every stay is managed with respect and professionalism for both guests and property owners.
           </p>
         </div>
+
+        {/* Partnership */}
+        <div className="max-w-3xl mx-auto space-y-6 mb-16">
+          <h3 className="font-heading text-2xl md:text-3xl text-primary">
+            Our Partnerships
+          </h3>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            Bailey PrimeStay operates in partnership with the award-winning Douglas Luxury Apartments, managing select units across East Legon, Shiashie, and Adenta.
+          </p>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            Through this partnership, we manage guest experience and daily operations, ensuring every apartment meets our standards and delivers a comfortable, high-quality short stay.
+          </p>
+        </div>
       </div>
     </section>
   );
