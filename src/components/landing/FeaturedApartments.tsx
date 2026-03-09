@@ -1,30 +1,30 @@
-import apartment1 from "@/assets/apartment-1.jpg";
-import apartment2 from "@/assets/apartment-2.jpg";
-import apartment3 from "@/assets/apartment-3.jpg";
-import heroImage from "@/assets/hero-apartment.jpg";
+import apartment4 from "@/assets/apartment-4.jpg";
+import apartment5 from "@/assets/apartment-5.jpg";
+import apartment6 from "@/assets/apartment-6.jpg";
+import apartment7 from "@/assets/apartment-7.jpg";
 
 const apartments = [
   {
     id: 1,
-    image: apartment1,
+    image: apartment4,
     title: "Douglas Luxury East Legon",
     location: "6 apartments",
   },
   {
     id: 2,
-    image: apartment2,
+    image: apartment5,
     title: "Douglas Luxury Shiashie",
     location: "4 apartments",
   },
   {
     id: 3,
-    image: heroImage,
+    image: apartment6,
     title: "Douglas Luxury Adenta",
     location: "5 apartments",
   },
   {
     id: 4,
-    image: apartment3,
+    image: apartment7,
     title: "Douglas Satey Rectner",
     location: "10 suites",
   },
