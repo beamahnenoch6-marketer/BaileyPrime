@@ -1,13 +1,8 @@
 import { Button } from "@/components/ui/button";
 
-const Contact = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+const WHATSAPP_URL = "https://wa.me/message/MSNIQUTA6M5QH1";
 
+const Contact = () => {
   return (
     <section id="contact" className="py-20 px-6 bg-cream">
       <div className="max-w-7xl mx-auto">
@@ -17,15 +12,17 @@ const Contact = () => {
             <h2 className="font-heading text-3xl md:text-4xl text-primary mb-6">
               Contact Us Today
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              At Douglas Luxury Apartments, we pride ourselves on delivering exceptional service and a seamless booking experience. Whether you're traveling for business or leisure, our team is dedicated to ensuring your stay is comfortable and memorable.
+            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+              At BaileyPrimeStay, we pride ourselves on delivering exceptional service and a seamless booking experience. Whether you're traveling for business or leisure, our team is dedicated to ensuring your stay is comfortable and memorable.
             </p>
-            <Button 
-              onClick={() => scrollToSection("booking")}
-              className="bg-gold hover:bg-gold-light text-primary font-semibold px-8 py-3 rounded-none"
-            >
-              Inquire Now
-            </Button>
+            <p className="text-muted-foreground text-sm mb-8">
+              📧 baileyprimestay@gmail.com
+            </p>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <Button className="bg-gold hover:bg-gold-light text-primary font-semibold px-8 py-3 rounded-none">
+                Inquire Now
+              </Button>
+            </a>
           </div>
 
           {/* Video */}
