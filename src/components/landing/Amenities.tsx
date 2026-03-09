@@ -1,71 +1,101 @@
-import { Home, Building2, CalendarCheck, Briefcase, ConciergeBell, FileText, HelpCircle } from "lucide-react";
+import apartment1 from "@/assets/apartment-1.jpg";
+import apartment2 from "@/assets/apartment-2.jpg";
+import { Button } from "@/components/ui/button";
 
-const services = [
+const amenities = [
   {
-    icon: Home,
-    title: "Short-Stay Accommodation",
-    description: "Fully furnished luxury apartments for your perfect short-term stay in Accra.",
+    id: 1,
+    image: apartment1,
+    title: "Bedroom",
+    description: "Relax in style",
   },
   {
-    icon: Building2,
-    title: "Property Management",
-    description: "Professional day-to-day management, cleaning, and maintenance of luxury units.",
+    id: 2,
+    image: apartment2,
+    title: "Bathroom",
+    description: "Experience the ultimate in comfort and care",
   },
   {
-    icon: CalendarCheck,
-    title: "Booking Guidance",
-    description: "Seamless booking assistance to help you find the ideal apartment for your needs.",
+    id: 3,
+    image: apartment1,
+    title: "Douglas & Stayy Juey",
+    description: "Coalition Rental in local Legomen Gorly Artliners Succeedals",
+    highlight: true,
+    phone: "0503650656",
   },
   {
-    icon: Briefcase,
-    title: "Corporate & Executive Stays",
-    description: "Tailored accommodation solutions for business travelers and corporate teams.",
-  },
-  {
-    icon: ConciergeBell,
-    title: "Concierge Support",
-    description: "Dedicated concierge services to enhance your stay with personalized assistance.",
-  },
-  {
-    icon: FileText,
-    title: "Policies",
-    description: "Clear and transparent policies ensuring a smooth and hassle-free experience.",
-  },
-  {
-    icon: HelpCircle,
-    title: "FAQs",
-    description: "Answers to commonly asked questions about our services and apartments.",
+    id: 4,
+    image: apartment2,
+    title: "Our Trusted Partners",
+    description: "Discover our trusted partner Douglas Luxury Apartments",
   },
 ];
 
 const Amenities = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="py-16 px-6 bg-primary">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="font-heading text-2xl md:text-3xl text-gold mb-3">
-            Our Services
+            Amenities and Features
           </h2>
           <p className="text-white/70 text-sm max-w-xl mx-auto">
-            Everything you need for a luxurious and comfortable stay in Accra
+            Enjoy a range of thoughtful amenities and luxurious features in our apartments, including high-quality furnishings
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {services.map((item, index) => (
+        {/* Amenities Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {amenities.map((item) => (
             <div
-              key={index}
-              className="bg-cream p-5 text-center flex flex-col items-center"
+              key={item.id}
+              className="bg-cream p-4 text-center"
             >
-              <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center border-2 border-gold">
-                <item.icon className="w-6 h-6 text-primary" />
+              <div className="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden border-2 border-gold">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="font-semibold text-primary text-sm mb-1">{item.title}</h3>
-              <p className="text-muted-foreground text-xs">{item.description}</p>
+              <p className="text-muted-foreground text-xs mb-3">{item.description}</p>
+              {item.highlight ? (
+                <Button 
+                  size="sm"
+                  className="bg-gold hover:bg-gold-light text-primary text-xs font-semibold rounded-none px-4"
+                >
+                  {item.phone}
+                </Button>
+              ) : (
+                <Button 
+                  size="sm"
+                  variant="outline"
+                  className="border-gold text-primary hover:bg-gold/10 text-xs rounded-none px-4"
+                >
+                  {item.id === 1 ? "Learn More" : item.id === 2 ? "Explore Now" : "Partner with us"}
+                </Button>
+              )}
             </div>
           ))}
+        </div>
+
+        {/* Book Your Stay Button */}
+        <div className="text-center mt-10">
+          <Button 
+            onClick={() => scrollToSection("booking")}
+            className="bg-primary border border-white/20 hover:bg-navy-light text-white font-semibold px-8 py-3 rounded-none"
+          >
+            Book Your Stay
+          </Button>
         </div>
       </div>
     </section>
