@@ -1,3 +1,12 @@
+const WHATSAPP_URL = "https://wa.me/message/MSNIQUTA6M5QH1";
+
+const socialLinks = [
+  { name: "Instagram", url: "https://www.instagram.com/bailey_primestay?igsh=anRzb2p3amRrZm5v&utm_source=qr" },
+  { name: "Facebook", url: "https://www.facebook.com/share/1Fszu4P9fP/?mibextid=wwXIfr" },
+  { name: "TikTok", url: "https://www.tiktok.com/@bailey.primestay?_r=1&_t=ZS-93syC9j0xEK" },
+  { name: "WhatsApp", url: WHATSAPP_URL },
+];
+
 const Footer = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -17,6 +26,9 @@ const Footer = () => {
                 <span className="text-primary font-bold text-lg">B</span>
               </div>
             </div>
+            <p className="text-white/50 text-xs mb-2">
+              📧 baileyprimestay@gmail.com
+            </p>
             <p className="text-white/50 text-xs">
               © {new Date().getFullYear()} BaileyPrimeStay, Inc.
               <br />
@@ -31,7 +43,7 @@ const Footer = () => {
               {["Home", "About", "Apartments", "Contact"].map((item) => (
                 <li key={item}>
                   <button
-                    onClick={() => scrollToSection(item.toLowerCase())}
+                    onClick={() => scrollToSection(item === "Home" ? "hero" : item.toLowerCase())}
                     className="text-white/70 hover:text-gold text-sm transition-colors"
                   >
                     {item}
@@ -57,13 +69,15 @@ const Footer = () => {
           <div>
             <h4 className="text-gold text-sm font-semibold mb-4">Connect with Us</h4>
             <ul className="space-y-2">
-              {["Facebook", "Instagram", "Twitter", "LinkedIn"].map((item) => (
-                <li key={item}>
+              {socialLinks.map((item) => (
+                <li key={item.name}>
                   <a
-                    href="#"
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white/70 hover:text-gold text-sm transition-colors"
                   >
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}

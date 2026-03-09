@@ -1,6 +1,8 @@
 import apartment2 from "@/assets/apartment-2.jpg";
 import { Button } from "@/components/ui/button";
 
+const WHATSAPP_URL = "https://wa.me/message/MSNIQUTA6M5QH1";
+
 const Discover = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -23,12 +25,11 @@ const Discover = () => {
             <p className="text-white/70 text-sm leading-relaxed mb-8">
               Welcome to BaileyPrimeStay, where we offer a curated selection of clean, private, and premium short-stay apartments in prime locations throughout Accra. Enjoy the comfort and convenience of a home away from home, with quality service, professionalism, and a memorable stay every time.
             </p>
-            <Button 
-              onClick={() => scrollToSection("apartments")}
-              className="bg-gold hover:bg-gold-light text-primary font-semibold px-8 py-3 rounded-none"
-            >
-              Explore Apartments
-            </Button>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <Button className="bg-gold hover:bg-gold-light text-primary font-semibold px-8 py-3 rounded-none">
+                Explore Apartments
+              </Button>
+            </a>
           </div>
 
           {/* Image */}
@@ -41,12 +42,11 @@ const Discover = () => {
               />
             </div>
             <div className="absolute -bottom-4 -right-4 md:bottom-4 md:right-4">
-              <Button 
-                onClick={() => scrollToSection("contact")}
-                className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 py-2.5 rounded-none shadow-lg"
-              >
-                Book Now
-              </Button>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <Button className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 py-2.5 rounded-none shadow-lg">
+                  Book Now
+                </Button>
+              </a>
             </div>
           </div>
         </div>

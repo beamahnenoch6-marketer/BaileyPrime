@@ -38,13 +38,14 @@ const Hero = () => {
         </p>
         
         {/* CTA Button */}
-        <Button 
-          onClick={() => scrollToSection("contact")}
-          size="lg" 
-          className="bg-gold hover:bg-gold-light text-primary font-semibold px-10 py-6 text-lg rounded-none"
-        >
-          Book Now
-        </Button>
+        <a href="https://wa.me/message/MSNIQUTA6M5QH1" target="_blank" rel="noopener noreferrer">
+          <Button 
+            size="lg" 
+            className="bg-gold hover:bg-gold-light text-primary font-semibold px-10 py-6 text-lg rounded-none"
+          >
+            Book Now
+          </Button>
+        </a>
       </div>
     </section>
   );

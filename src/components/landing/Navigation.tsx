@@ -59,12 +59,14 @@ const Navigation = () => {
               {item.label}
             </button>
           ))}
-          <button
-            onClick={() => scrollToSection("contact")}
+          <a
+            href="https://wa.me/message/MSNIQUTA6M5QH1"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 py-2.5 text-sm"
           >
             Book Now
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -89,12 +91,14 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <button
-              onClick={() => scrollToSection("contact")}
+            <a
+              href="https://wa.me/message/MSNIQUTA6M5QH1"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gold hover:bg-gold-light text-primary font-semibold px-6 py-2.5 text-sm mt-2"
             >
               Book Now
-            </button>
+            </a>
           </div>
         </div>
       )}
